@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, sans-serif; /* 设置字体 */
+    background-color: #f0f0f0; /* 设置背景颜色 */
+    color: #333; /* 设置文字颜色 */
+}
+
+h1 {
+    font-size: 24px; /* 设置标题字体大小 */
+    color: #007BFF; /* 设置标题颜色 */
+}
+
+button {
+    padding: 10px 20px; /* 设置内边距 */
+    background-color: #007BFF; /* 设置背景颜色 */
+    color: white; /* 设置文字颜色 */
+    border: none; /* 去掉边框 */
+    border-radius: 5px; /* 设置圆角 */
+}
