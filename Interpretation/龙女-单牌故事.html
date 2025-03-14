@@ -105,21 +105,6 @@
     margin: 15px 0 !important;
 }
 
-.special-link::after {
-    content: "✨";
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    animation: sparkle 1.5s infinite;
-}
-
-@keyframes sparkle {
-    0% { opacity: 0.5; }
-    50% { opacity: 1; }
-    100% { opacity: 0.5; }
-}
-
 /* 移动端优化 */
 @media (max-width: 768px) {
     .special-link {
@@ -130,6 +115,29 @@
         right: 5px;
         font-size: 0.8em;
     }
+}
+/* 右侧内容区链接样式 */
+.main-content a {
+    color: #fff !important; /* 白色文字 */
+    text-decoration: none;
+    border-bottom: 1px dotted var(--medium-green);
+    transition: all 0.3s;
+}
+
+.main-content a:hover {
+    color: var(--light-green) !important;
+    border-bottom-style: solid;
+    text-shadow: 0 0 8px rgba(255,255,255,0.2);
+}
+
+/* 卡片内链接特殊处理 */
+.arcana-section a {
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.arcana-section a:hover {
+    background: rgba(255,255,255,0.1);
 }
 </style>
 </head>
@@ -162,7 +170,7 @@
     <main class="main-content">
         <!-- 大阿卡那 -->
             <h2>单牌故事</h2>       
-        <section id="major-arcana" class="arcana-section">
+        <section id="major-arcana" class="arcana-section a">
             <!-- 原有大牌内容 -->
             <h3 class="card-title">大阿卡纳</h3>
             <p>空白牌
@@ -259,7 +267,7 @@
         </section>
 
         <!-- 权杖系列 -->
-        <section id="wands" class="arcana-section">
+        <section id="wands" class="arcana-section a">
             <h3 class="card-title">权杖系列</h3>
             #### **6. 权杖X
 - **故事概要**：
@@ -365,7 +373,7 @@
         </section>
 
         <!-- 宝剑系列 -->
-        <section id="swords" class="arcana-section">
+        <section id="swords" class="arcana-section a">
             <h3 class="card-title">宝剑系列</h3>
             <p>宝剑X
 故事：一位情侣感情很好，但抽到宝剑X牌，表示需要计划性的时间或定义关系，如结婚。另一案例中，全是宝剑牌的情侣最终分居或离婚。
@@ -441,7 +449,7 @@
         </section>
 
         <!-- 圣杯系列 -->
-        <section id="cups" class="arcana-section">
+        <section id="cups" class="arcana-section a">
             <h2>圣杯系列</h2>
             <h3 class="card-title">圣杯X</h3>
             <p>
@@ -529,9 +537,8 @@
         </section>
 
         <!-- 星币系列 -->
-        <section id="pentacles" class="arcana-section">
+        <section id="pentacles" class="arcana-section a">
             <h2>星币系列</h2>
-            <h3 class="card-title">星币X</h3>
             <p>
 ### **星币X**
 - **故事概要**：星币X象征新的开始和财运的起点，但可能缺乏实际的落地性。牌面中的人可能在某个领域有天赋或机会，但需要通过实际行动去验证。这张牌也与家族资源或神灵助力有关。
