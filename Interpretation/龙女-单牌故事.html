@@ -73,8 +73,12 @@
             background: rgba(255, 255, 255, 0.05);
             border-radius: 8px;
             border: 1px solid var(--medium-green);
-            color: var(--light-green); /* 与普通文本同色 */
+            color: var(--light-green)!important; /* 与普通文本同色 */
             text-decoration: none; /* 移除下划线 */
+        }
+        .arcana-section:hover {
+            color: #fff !important; /* 悬停变纯白 */
+            text-decoration: none; /* 保持无下划线 */
         }
 
         .card-title {
