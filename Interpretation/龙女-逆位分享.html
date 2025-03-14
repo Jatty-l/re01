@@ -136,14 +136,21 @@
 </style>
     <style>
     /* 新增右侧背景样式 */
-  .content {
-            position: relative;
-            background: 
-                linear-gradient(rgba(26, 60, 39, 0.9), 
-                rgba(26, 60, 39, 0.8)),
-                url('star.png') center/cover fixed;
-            min-height: calc(100vh - 40px);
-        }
+body .main-content {
+    position: relative !important; /* 覆盖可能的定位冲突 */
+    background: 
+        linear-gradient(rgba(26, 60, 39, 0.9), 
+        rgba(26, 60, 39, 0.8)),
+        url('https://jatty-l.github.io/re01/star.png') center/cover fixed !important;
+    min-height: calc(100vh - 40px);
+    z-index: 1; /* 建立新层叠上下文 */
+}
+
+/* 隔离Bootstrap影响 */
+.main-content > * {
+    position: relative;
+    z-index: 2; /* 确保内容在背景之上 */
+}
 
     /* 增强内容可读性 */
     .container {
