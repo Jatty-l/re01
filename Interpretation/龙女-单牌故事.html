@@ -120,8 +120,30 @@
         font-size: 0.8em;
     }
 }
+</style>
+    <style>
+    /* 新增右侧背景样式 */
+    .content {
+        position: relative;
+        background: 
+            linear-gradient(rgba(26, 60, 39, 0.9), 
+            rgba(26, 60, 39, 0.8)),
+            url('star.png') center/cover fixed;
+        min-height: calc(100vh - 40px);
+    }
 
+    /* 增强内容可读性 */
+    .container {
+        position: relative;
+        z-index: 1;
+    }
 
+    /* 移动端优化 */
+    @media (max-width: 768px) {
+        .content {
+            background-attachment: scroll;
+        }
+    }
 </style>
 </head>
 
