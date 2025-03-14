@@ -133,36 +133,57 @@
     }
 }
 </style>
-    <style>
-    /* 新增右侧背景样式 */
-body .main-content {
-    position: relative !important; /* 覆盖可能的定位冲突 */
+<style>
+/* 修改main-content的样式 */
+.main-content {
+    position: relative; /* 建立定位上下文 */
+    min-height: calc(100vh - 40px);
+    z-index: 1; /* 设置基础层级 */
+}
+
+/* 添加背景层 */
+.main-content::before {
+    content: '';
+    position: fixed; /* 使用fixed实现视差效果 */
+    top: 0;
+    left: 250px; /* 与侧边栏宽度一致 */
+    right: 0;
+    bottom: 0;
     background: 
         linear-gradient(rgba(26, 60, 39, 0.9), 
         rgba(26, 60, 39, 0.8)),
-        url('https://jatty-l.github.io/re01/star.png') center/cover fixed !important;
-    min-height: calc(100vh - 40px);
-    z-index: 1; /* 建立新层叠上下文 */
+        url('https://jatty-l.github.io/re01/star.png') center/cover;
+    z-index: -1; /* 确保在内容下方 */
 }
 
-/* 隔离Bootstrap影响 */
-.main-content > * {
+/* 调整内容区块层级 */
+.arcana-section {
     position: relative;
-    z-index: 2; /* 确保内容在背景之上 */
+    z-index: 2; /* 高于背景层 */
+    background: rgba(26, 60, 39, 0.7); /* 半透明背景提升可读性 */
+    margin: 40px 0;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--medium-green);
 }
 
-    /* 增强内容可读性 */
-    .container {
-        position: relative;
-        z-index: 1;
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .main-content::before {
+        left: 0; /* 全屏显示 */
+        top: 0;
     }
+    
+    .main-content {
+        margin-left: 0;
+        z-index: auto;
+    }
+}
 
-    /* 移动端优化 */
-    @media (max-width: 768px) {
-        .content {
-            background-attachment: scroll;
-        }
-    }
+/* 确保其他元素层级正确 */
+.sidebar {
+    z-index: 3; /* 侧边栏保持在最顶层 */
+}
 </style>
 </head>
 
