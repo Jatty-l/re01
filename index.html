@@ -1,61 +1,122 @@
 <!DOCTYPE html>
-<html>
-  <body>
-  
 <html lang="zh-CN">
-
 <head>
     <meta charset="utf-8">
-    <meta name="viewport"
-        content="initial-scale=1, width=device-width" />
+    <meta name="viewport" content="initial-scale=1, width=device-width">
     <title>小臭展览</title>
-    <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdn.staticfile.net/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.staticfile.net/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+    <style>
+        :root {
+            --deep-green: #1a3c27;     /* 深绿背景 */
+            --medium-green: #7da87b;   /* 中等绿色 */
+            --light-green: #d9ead3;    /* 浅绿文字 */
+            --accent-color: #e8f5e9;   /* 强调色 */
+        }
 
-    <style>  
-      body {
-        margin: 0;
-      }
+        body {
+            background-color: var(--deep-green);
+            color: var(--light-green);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .header-container {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px 0;
+            border-bottom: 2px solid var(--medium-green);
+        }
+
+        .site-logo {
+            transition: transform 0.3s;
+        }
+
+        .site-logo:hover {
+            transform: rotate(-5deg);
+        }
+
+        .nav-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px auto;
+            max-width: 800px;
+        }
+
+        .nav-link {
+            color: var(--light-green) !important;
+            font-size: 1.2em;
+            padding: 15px 25px !important;
+            margin: 10px;
+            border: 1px solid var(--medium-green);
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: var(--medium-green);
+            color: var(--deep-green) !important;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .content-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px auto;
+            max-width: 800px;
+            border: 1px solid var(--medium-green);
+        }
+
+        h1, h2 {
+            color: var(--accent-color);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .nav-link {
+                display: block;
+                margin: 10px 0;
+            }
+        }
     </style>
 </head>
-  
+
 <body>
-<div class="container bg-primary text-white p-3" 
-  style="text-align: center;
-  padding: 5px;
-">
-  <p><img src="mark-01.png" alt="logo" width="100px" height="100px"></p>
-</div>
-
-<div style=" text-align: center;">
- <h1>小臭展览</h1>
-</div>
-
-<div style="
-  text-align: center;
-">
-  <p><a href="https://jatty-l.github.io/re01">index</a></p>
-</div>
-
-
-<div style="
-  text-align: center;
-">
- <h2>hello</h2>
-</div>
-
-<div class="container " style="background-color: #87CEFA;">
-  <div class="row">
-    <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-        <a href="https://jatty-l.github.io/re01/meow.html">meow</a>
-       </div>
-    <div class="col-12  col-sm-6 col-md-6 col-lg-4">
-      <a href="https://jatty-l.github.io/re01/cards.html">cards</a>
+    <!-- 头部 -->
+    <div class="header-container">
+        <div class="text-center">
+            <img src="mark-01.png" alt="logo" class="site-logo" width="100" height="100">
+            <h1>小臭展览</h1>
+            <div class="mt-2">
+                <a href="https://jatty-l.github.io/re01" class="btn btn-link nav-link">首页</a>
+            </div>
+        </div>
     </div>
-</div>
-</div>
-</body>
 
+    <!-- 导航区块 -->
+    <div class="nav-container">
+        <div class="row text-center">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-3">
+                <a href="https://jatty-l.github.io/re01/meow.html" class="nav-link">喵呜展览</a>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-3">
+                <a href="https://jatty-l.github.io/re01/cards.html" class="nav-link">卡片收藏</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 内容区块 -->
+    <div class="content-section">
+        <h2 class="text-center mb-4">Hello</h2>
+        <p class="lead text-center" style="color: var(--medium-green);">
+            欢迎来到小臭的创意空间，这里展示各种有趣的作品收藏
+        </p>
+    </div>
+
+    <!-- 脚本 -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
 </html>
