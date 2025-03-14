@@ -1,45 +1,164 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  
-<html>
-
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>龙女-单牌故事</title>
-     <link rel="stylesheet" href="styles.css">
-   <link rel="stylesheet" href="https://cdn.staticfile.net/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
-   <script src="js/jquery.min.js"></script>
-   <script src="js/bootstrap.min.js"></script>
-    
-    <style>  
-      body {
-        margin: 0;
-      }
+    <title>塔罗解读 - 单牌故事</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.net/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="./mark-01.ico" type="image/x-icon">
+    <style>
+        :root {
+            --deep-green: #1a3c27;
+            --medium-green: #7da87b;
+            --light-green: #d9ead3;
+            --accent-color: #e8f5e9;
+        }
+
+        body {
+            background-color: var(--deep-green);
+            color: var(--light-green);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+        }
+
+        /* 左侧导航 */
+        .sidebar {
+            width: 250px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-right: 2px solid var(--medium-green);
+            position: fixed;
+            height: 100vh;
+        }
+
+        .nav-section {
+            margin-bottom: 30px;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 12px;
+            color: var(--light-green) !important;
+            border: 1px solid var(--medium-green);
+            border-radius: 8px;
+            margin: 8px 0;
+            transition: all 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: var(--medium-green);
+            color: var(--deep-green) !important;
+            text-decoration: none;
+        }
+
+        /* 右侧内容 */
+        .main-content {
+            flex: 1;
+            margin-left: 250px;
+            padding: 30px;
+            max-width: 800px;
+        }
+
+        .arcana-section {
+            margin: 40px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border: 1px solid var(--medium-green);
+        }
+
+        .card-title {
+            color: var(--accent-color);
+            border-left: 4px solid var(--medium-green);
+            padding-left: 15px;
+            margin: 25px 0 15px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+            .main-content {
+                margin-left: 0;
+            }
+        }
     </style>
-    <link rel="shortcut icon" href="./mark-01.ico" type="image/x-icon" />
 </head>
 
 <body>
-  
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<div class="container bg-primary pb-5">
-  <p> </p>
-  <div class="row">
-    <div class="col-12 col-sm-6 col-md-6 col-lg-4 border p-3">
-        <a href="https://jatty-l.github.io/re01/Interpretation/龙女-单牌故事.html" class="text-white"><font color="white">龙女-单牌故事</font></a>
-    </div>
-    <div class="col-12 col-sm-6 col-md-6 col-lg-4 border p-3">
-      <a href="https://jatty-l.github.io/re01/Interpretation/龙女-逆位解析.html" class="text-white"><font color="white">龙女-逆位解析</font></a>
-    </div>
-    <div class="col-12 col-sm-6 col-md-6 col-lg-4 border p-3">
-      <a href="https://jatty-l.github.io/re01/Interpretation/龙女-逆位分享.html" class="text-white"><font color="white">龙女-逆位分享</font></a>
-    </div>
-  </div>
-   <p> </p>
-</div>
-  
-  <p>空白牌
+    <!-- 左侧导航 -->
+    <nav class="sidebar">
+        <!-- 上部导航 -->
+        <div class="nav-section">
+            <a href="https://jatty-l.github.io/re01/Interpretation/龙女-单牌故事.html" class="nav-link">龙女-单牌故事</a>
+            <a href="https://jatty-l.github.io/re01/Interpretation/龙女-逆位解析.html" class="nav-link">龙女-逆位解析</a>
+            <a href="https://jatty-l.github.io/re01/Interpretation/龙女-逆位分享.html" class="nav-link">龙女-逆位分享</a>
+        </div>
+
+        <!-- 下部导航 -->
+        <div class="nav-section">
+            <a href="#major-arcana" class="nav-link">大阿卡那</a>
+            <a href="#wands" class="nav-link">权杖系列</a>
+            <a href="#swords" class="nav-link">宝剑系列</a>
+            <a href="#cups" class="nav-link">圣杯系列</a>
+            <a href="#pentacles" class="nav-link">星币系列</a>
+        </div>
+    </nav>
+
+    <!-- 右侧内容 -->
+    <main class="main-content">
+        <!-- 大阿卡那 -->
+        <section id="major-arcana" class="arcana-section">
+            <h2>大阿卡那</h2>
+            <!-- 原有大牌内容 -->
+            <h3 class="card-title">空白牌</h3>
+            <p>故事：一位在美国留学的客户询问未来三个月的运势...</p>
+            
+            <h3 class="card-title">魔术师（逆位）</h3>
+            <p>单人舞台。众人瞩目。看似样样精通...</p>
+            <!-- 其他大牌内容 -->
+        </section>
+
+        <!-- 权杖系列 -->
+        <section id="wands" class="arcana-section">
+            <h2>权杖系列</h2>
+            <h3 class="card-title">权杖X</h3>
+            <p>故事：一位客户询问考试能否通过时抽到权杖X...</p>
+            <!-- 其他权杖内容 -->
+        </section>
+
+        <!-- 宝剑系列 -->
+        <section id="swords" class="arcana-section">
+            <h2>宝剑系列</h2>
+            <h3 class="card-title">宝剑X</h3>
+            <p>故事：一位情侣感情很好，但抽到宝剑X牌...</p>
+            <!-- 其他宝剑内容 -->
+        </section>
+
+        <!-- 圣杯系列 -->
+        <section id="cups" class="arcana-section">
+            <h2>圣杯系列</h2>
+            <h3 class="card-title">圣杯X</h3>
+            <p>故事：作者在2017年9月的北京之行中抽到圣杯X...</p>
+            <!-- 其他圣杯内容 -->
+        </section>
+
+        <!-- 星币系列 -->
+        <section id="pentacles" class="arcana-section">
+            <h2>星币系列</h2>
+            <h3 class="card-title">星币X</h3>
+            <p>故事：星币X象征新的开始和财运的起点...</p>
+            <!-- 其他星币内容 -->
+        </section>
+<p>空白牌
 故事：一位在美国留学的客户询问未来三个月的运势，第二个月抽到空白牌。占卜师提醒会有意想不到的事情发生，可能是惊喜也可能是伤害。结果，客户在拉斯维加斯被求婚并冲动结婚，但半年后离婚。
 寓意：空白牌象征未知和不可预测性，可能带来惊喜或意外，需谨慎对待。
 
@@ -473,11 +592,11 @@
 </p>
 
 
+        <p><a href="https://jatty-l.github.io/re01/" class="nav-link">返回首页</a></p>
+    </main>
 
-
-
-
-    
-    <p><a href="https://jatty-l.github.io/re01/">index</a></p>
-  </body>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
 </html>
+  
