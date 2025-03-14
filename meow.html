@@ -1,41 +1,167 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  
-<html>
-
-  <head>
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meow</title>
-     <link rel="stylesheet" href="styles.css">
-   <link rel="stylesheet" href="https://cdn.staticfile.net/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
-   <script src="js/jquery.min.js"></script>
-   <script src="js/bootstrap.min.js"></script>
-    
-    <style>  
-      body {
-        margin: 0;
-      }
+    <title>每日写作空间</title>
+    <style>
+        :root {
+            --deep-green: #1a3c27;     /* 深绿色 */
+            --medium-green: #7da87b;   /* 中等绿色 */
+            --light-green: #d9ead3;    /* 浅绿色 */
+            --text-color: #e8f5e9;     /* 文字颜色 */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            background-color: var(--deep-green);
+            color: var(--text-color);
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* 左侧菜单样式 */
+        .sidebar {
+            width: 250px;
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+        }
+
+        .menu-title {
+            color: var(--medium-green);
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        .menu-list {
+            list-style: none;
+        }
+
+        .menu-list a {
+            color: var(--light-green);
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .menu-list a:hover {
+            background-color: var(--medium-green);
+            color: var(--deep-green);
+        }
+
+        /* 右侧内容区域 */
+        .main-content {
+            flex: 1;
+            padding: 30px;
+            max-width: 800px;
+        }
+
+        /* 文章预览框 */
+        .article-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--medium-green);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .article-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .article-date {
+            color: var(--medium-green);
+            font-size: 0.9em;
+        }
+
+        .article-title {
+            color: var(--light-green);
+            margin: 10px 0;
+        }
+
+        .article-tags {
+            margin-top: 15px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--medium-green);
+            color: var(--deep-green);
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin-right: 5px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+        }
     </style>
-    <link rel="shortcut icon" href="./mark-01.ico" type="image/x-icon" />
 </head>
-
 <body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <h1>Meow?</h1>
-    <h1>Meow!?</h1>
-  
+    <div class="container">
+        <!-- 左侧菜单 -->
+        <nav class="sidebar">
+            <h2 class="menu-title">导航菜单</h2>
+            <ul class="menu-list">
+                <li><a href="#calendar">📅 写作日历</a></li>
+                <li><a href="#tag1">🏷️ 技术思考</a></li>
+                <li><a href="#tag2">🏷️ 生活随笔</a></li>
+                <li><a href="#tag3">🏷️ 读书笔记</a></li>
+                <li><a href="#tag4">🏷️ 旅行见闻</a></li>
+            </ul>
+        </nav>
 
-    <video width="320" height="180" controls>
-  <source src="video-01.mp4" type="video/mp4">
-  <source src="video-01.ogg" type="video/ogg">
-  <source src="video-01.webm" type="video/webm">
-   <source src="video-01.mov" type="video/quicktime">
-  <object data="video-01.mp4" width="320" height="240">
-    <embed src="video-01.swf" width="320" height="240">
-  </object>
-</video>
-    
-    <p><a href="https://jatty-l.github.io/re01/">index</a></p>
-  </body>
+        <!-- 右侧内容 -->
+        <main class="main-content">
+            <h1>每日写作空间</h1>
+            <p style="margin: 20px 0; color: var(--medium-green);">记录思考的轨迹，沉淀知识的点滴</p>
+            
+            <!-- 文章列表 -->
+            <div class="article-card">
+                <div class="article-date">2024-02-20 更新</div>
+                <h2 class="article-title">如何建立可持续的写作习惯</h2>
+                <p>写作是一项需要长期坚持的脑力劳动，本文分享三个建立写作习惯的实用技巧...</p>
+                <div class="article-tags">
+                    <span class="tag">生活随笔</span>
+                    <span class="tag">自我管理</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-date">2024-02-19 更新</div>
+                <h2 class="article-title">Markdown写作的进阶技巧</h2>
+                <p>探索如何通过Markdown实现高效内容创作，包括流程图绘制、数学公式排版等...</p>
+                <div class="article-tags">
+                    <span class="tag">技术思考</span>
+                    <span class="tag">工具指南</span>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
 </html>
