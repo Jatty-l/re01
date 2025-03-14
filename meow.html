@@ -120,6 +120,28 @@
                 position: relative;
             }
         }
+        /* 特殊菜单项样式 */
+.special-link {
+    text-align: center !important;
+    background: linear-gradient(45deg, 
+        var(--medium-green), 
+        rgba(125, 168, 123, 0.5)) !important;
+    border: 1px solid var(--accent-color) !important;
+    position: relative;
+    margin: 15px 0 !important;
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+    .special-link {
+        margin: 10px 0 !important;
+        padding: 15px !important;
+    }
+    .special-link::after {
+        right: 5px;
+        font-size: 0.8em;
+    }
+}
     </style>
 </head>
 <body>
@@ -134,6 +156,9 @@
                 <li><a href="#tag3">🏷️ 读书笔记</a></li>
                 <li><a href="#tag4">🏷️ 旅行见闻</a></li>
             </ul>
+            <div class="menu-list">
+                <a href="https://jatty-l.github.io/re01/" class="menu-list special-link">首页</a>
+            </div>
         </nav>
 
         <!-- 右侧内容 -->
