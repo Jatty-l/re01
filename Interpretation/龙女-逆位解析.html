@@ -1,44 +1,197 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  
-<html>
-
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>龙女-逆位解析</title>
-     <link rel="stylesheet" href="styles.css">
-   <link rel="stylesheet" href="https://cdn.staticfile.net/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
-   <script src="js/jquery.min.js"></script>
-   <script src="js/bootstrap.min.js"></script>
-    
-    <style>  
-      body {
-        margin: 0;
-      }
+    <title>塔罗解读 - 逆位解析</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.net/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="/re01/mark-01.ico" type="image/x-icon"> 
+    <style>
+        :root {
+            --deep-green: #1a3c27;
+            --medium-green: #7da87b;
+            --light-green: #d9ead3;
+            --accent-color: #e8f5e9;
+        }
+
+        body {
+            background-color: var(--deep-green);
+            color: var(--light-green);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+        }
+
+        /* 左侧导航 */
+        .sidebar {
+            width: 250px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-right: 2px solid var(--medium-green);
+            position: fixed;
+            height: 100vh;
+        }
+
+        .nav-section {
+            margin-bottom: 30px;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 12px;
+            color: var(--light-green) !important;
+            border: 1px solid var(--medium-green);
+            border-radius: 8px;
+            margin: 8px 0;
+            transition: all 0.3s;
+        }
+        .nav-link-a {
+            display: block;
+            padding: 12px;
+            border: 1px solid var(--medium-green);
+            border-radius: 8px;
+            margin: 8px 0;
+            transition: all 0.3s;
+            background-color: var(--medium-green);
+            color: var(--deep-green) !important;
+        }
+        .nav-link-a:hover {
+            text-decoration: none;
+        }
+        
+        .nav-link:hover {
+            background-color: var(--medium-green);
+            color: var(--deep-green) !important;
+            text-decoration: none;
+        }
+
+        /* 右侧内容 */ 
+        .main-content {
+            flex: 1;
+            margin-left: 250px;
+            padding: 30px;
+            max-width: 800px;
+            color: var(--light-green)!important; /* 与普通文本同色 */
+            text-decoration: none; /* 移除下划线 */
+            transition: color 0.3s ease;
+        }
+
+        .arcana-section {
+            margin: 40px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border: 1px solid var(--medium-green);
+            color: var(--light-green)!important; /* 与普通文本同色 */
+            text-decoration: none; /* 移除下划线 */
+        }
+        
+        .card-title {
+            color: var(--accent-color);
+            border-left: 4px solid var(--medium-green);
+            padding-left: 15px;
+            margin: 25px 0 15px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+            .main-content {
+                margin-left: 0;
+            }
+        }
     </style>
-    <link rel="shortcut icon" href="./mark-01.ico" type="image/x-icon" />
+    <style>
+/* 在原有样式基础上新增 */
+/* 特殊菜单项样式 */
+.special-link {
+    text-align: center !important;
+    background: linear-gradient(45deg, 
+        var(--medium-green), 
+        rgba(125, 168, 123, 0.5)) !important;
+    border: 1px solid var(--accent-color) !important;
+    position: relative;
+    margin: 15px 0 !important;
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+    .special-link {
+        margin: 10px 0 !important;
+        padding: 15px !important;
+    }
+    .special-link::after {
+        right: 5px;
+        font-size: 0.8em;
+    }
+}
+</style>
+    <style>
+    /* 新增右侧背景样式 */
+  .content {
+            position: relative;
+            background: 
+                linear-gradient(rgba(26, 60, 39, 0.9), 
+                rgba(26, 60, 39, 0.8)),
+                url('star.png') center/cover fixed;
+            min-height: calc(100vh - 40px);
+        }
+
+    /* 增强内容可读性 */
+    .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* 移动端优化 */
+    @media (max-width: 768px) {
+        .content {
+            background-attachment: scroll;
+        }
+    }
+</style>
 </head>
 
 <body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<div class="container bg-primary pb-5">
-  <p> </p>
-  <div class="row">
-    <div class="col-12 col-sm-6 col-md-6 col-lg-4 border p-3">
-        <a href="https://jatty-l.github.io/re01/Interpretation/龙女-单牌故事.html" class="text-white"><font color="white">龙女-单牌故事</font></a>
-    </div>
-    <div class="col-12 col-sm-6 col-md-6 col-lg-4 border p-3">
-      <a href="https://jatty-l.github.io/re01/Interpretation/龙女-逆位解析.html" class="text-white"><font color="white">龙女-逆位解析</font></a>
-    </div>
-    <div class="col-12 col-sm-6 col-md-6 col-lg-4 border p-3">
-      <a href="https://jatty-l.github.io/re01/Interpretation/龙女-逆位分享.html" class="text-white"><font color="white">龙女-逆位分享</font></a>
-    </div>
-  </div>
-   <p> </p>
-</div>
+    <!-- 左侧导航 -->
+    <nav class="sidebar">
+        <!-- 上部导航 -->
+        <div class="nav-section">
+            <a href="https://jatty-l.github.io/re01/Interpretation/龙女-单牌故事.html" class="nav-link">龙女-单牌故事</a>
+            <a href="https://jatty-l.github.io/re01/Interpretation/龙女-逆位解析.html" class="nav-link-a">龙女-逆位解析</a>
+            <a href="https://jatty-l.github.io/re01/Interpretation/龙女-逆位分享.html" class="nav-link">龙女-逆位分享</a>
+        </div>
 
-  <p>大阿卡那（22张）
+        <!-- 下部导航 -->
+        <div class="nav-section">
+            <a href="#major-arcana" class="nav-link">大阿卡那</a>
+            <a href="#wands" class="nav-link">权杖系列</a>
+            <a href="#swords" class="nav-link">宝剑系列</a>
+            <a href="#cups" class="nav-link">圣杯系列</a>
+            <a href="#pentacles" class="nav-link">星币系列</a>
+        </div>
+        
+         <div class="nav-section">
+            <a href="https://jatty-l.github.io/re01/" class="nav-link special-link">首页</a>
+        </div>
+    </nav>
+
+    <!-- 右侧内容 -->
+    <main class="main-content">
+        <!-- 大阿卡那 -->
+            <h2>逆位解析</h2>       
+        <section id="major-arcana" class="arcana-section">
+            <!-- 原有大牌内容 -->
+            <h3 class="card-title">大阿卡纳</h3>
+  <p>
 0. 愚人逆位
 直接逃离的契机。当想摆脱困境时，愚人逆位提示机会已到，需立刻行动。若问感情或事业出现此牌，建议果断离开当前状态，等待或创造新契机。
 
@@ -105,8 +258,12 @@
 21. 世界逆位
 结局的意外波折。长期顺利却在收尾时遇阻，需接纳不完美，保持豁达心态。</p>
 
-<p>小阿卡那（56张）
-权杖组
+        </section>
+
+        <!-- 权杖系列 -->
+        <section id="wands" class="arcana-section">
+            <h3 class="card-title">权杖系列</h3>
+<p>
 权杖王牌逆位：暗中开始的契机，无需宣告，直接行动。
 权杖二逆位：起飞前的关键叮嘱，需倾听建议再决策。
 权杖三逆位：必经的弯路，踩坑后积累经验。
@@ -121,23 +278,11 @@
 权杖骑士逆位：计划落空，需预留灵活调整空间。
 权杖皇后逆位：活力过剩导致越界，需收敛锋芒。
 权杖国王逆位：高位者的幼稚行为，警惕权力滥用。</p>
+        </section>
 
-<p>圣杯组
-圣杯王牌逆位：情绪放大，需处理身心不同频的问题。
-圣杯二逆位：关系特写镜头的考验，需经得起细节审视。
-圣杯三逆位：浮于表面的快乐，及时收心切换状态。
-圣杯四逆位：矮子里拔将军，降低预期务实选择。
-圣杯五逆位：走出小挫折，抓住微光重燃希望。
-圣杯六逆位：怀旧会议，掺杂情感与回忆的交流。
-圣杯七逆位：屏蔽干扰，找到内心真实渴望。
-圣杯八逆位：困于责任无法脱身，需先解决现实问题。
-圣杯九逆位：精心准备却弄巧成拙，但无伤大雅。
-圣杯十逆位：泡沫般的幸福感，需警惕镜花水月。
-圣杯侍从逆位：纯真梦碎，被迫面对成人世界的复杂。
-圣杯骑士逆位：幽默风趣但不够走心，保持适度距离。
-圣杯皇后逆位：孤芳自赏，接纳不完美的自我展示。
-圣杯国王逆位：情感封闭，需走出舒适圈结识新人。</p>
-
+        <!-- 宝剑系列 -->
+        <section id="swords" class="arcana-section">
+            <h3 class="card-title">宝剑系列</h3>
 <p>宝剑组
 宝剑王牌逆位：暗中决心，无需声张默默行动。
 宝剑二逆位：开门或关门的抉择，可私了避免冲突。
@@ -153,7 +298,32 @@
 宝剑骑士逆位：注意力分散，放弃部分目标聚焦核心。
 宝剑皇后逆位：过度理性失去人情味，找回柔软一面。
 宝剑国王逆位：审视过去错误，汲取教训重新出发。</p>
+        </section>
 
+        <!-- 圣杯系列 -->
+        <section id="cups" class="arcana-section">
+            <h2>圣杯系列</h2>
+            <h3 class="card-title">圣杯X</h3>
+<p>圣杯组
+圣杯王牌逆位：情绪放大，需处理身心不同频的问题。
+圣杯二逆位：关系特写镜头的考验，需经得起细节审视。
+圣杯三逆位：浮于表面的快乐，及时收心切换状态。
+圣杯四逆位：矮子里拔将军，降低预期务实选择。
+圣杯五逆位：走出小挫折，抓住微光重燃希望。
+圣杯六逆位：怀旧会议，掺杂情感与回忆的交流。
+圣杯七逆位：屏蔽干扰，找到内心真实渴望。
+圣杯八逆位：困于责任无法脱身，需先解决现实问题。
+圣杯九逆位：精心准备却弄巧成拙，但无伤大雅。
+圣杯十逆位：泡沫般的幸福感，需警惕镜花水月。
+圣杯侍从逆位：纯真梦碎，被迫面对成人世界的复杂。
+圣杯骑士逆位：幽默风趣但不够走心，保持适度距离。
+圣杯皇后逆位：孤芳自赏，接纳不完美的自我展示。
+圣杯国王逆位：情感封闭，需走出舒适圈结识新人。</p>
+        </section>
+
+        <!-- 星币系列 -->
+        <section id="pentacles" class="arcana-section">
+            <h2>星币系列</h2>
 <p>星币组
 星币王牌逆位：因果显现，承受过去行为的累积结果。
 星币二逆位：暗中平衡多任务，反复磨合以求稳定。
@@ -170,7 +340,18 @@
 星币皇后逆位：资源过度掌控，允许自然流动。
 星币国王逆位：物质富足但情感匮乏，警惕功利主义。</p>
 
-    
-    <p><a href="https://jatty-l.github.io/re01/">index</a></p>
-  </body>
+        </section>
+     <p><a href="https://jatty-l.github.io/re01/" class="nav-link">返回首页</a></p>
+    </main>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
 </html>
+
+
+
+
+
+
+
