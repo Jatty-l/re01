@@ -53,14 +53,20 @@
             text-decoration: none;
         }
 
-        /* 右侧内容 */
+        /* 右侧内容 */ 
         .main-content {
             flex: 1;
             margin-left: 250px;
             padding: 30px;
             max-width: 800px;
+            color: var(--light-green); /* 与普通文本同色 */
+            text-decoration: none; /* 移除下划线 */
+            transition: color 0.3s ease;
         }
-
+        .main-content a:hover {
+            color: #fff !important; /* 悬停变纯白 */
+            text-decoration: none; /* 保持无下划线 */
+        }
         .arcana-section {
             margin: 40px 0;
             padding: 20px;
@@ -116,14 +122,7 @@
     }
 }
 
-/* 卡片内链接特殊处理 */
-.arcana-section a {
-    padding: 2px 5px;
-}
 
-.arcana-section a:hover {
-    background: rgba(255,255,255,0.1);
-}
 </style>
 </head>
 
